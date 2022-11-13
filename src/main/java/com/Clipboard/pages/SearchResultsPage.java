@@ -51,10 +51,10 @@ public class SearchResultsPage {
 		  return new SearchResultsPage(LocalBrowserInitialzation.driver);
 	  }
 	  
-	  public SearchResultsPage click_on_secondSamsungTV() {
+	  public ItemPage click_on_secondSamsungTV() {
 		  WaitHelper.isClickable(secondSamsungTV, LocalBrowserInitialzation.driver);	
 		  secondSamsungTV.click();
-		  return new SearchResultsPage(LocalBrowserInitialzation.driver);
+		  return new ItemPage(LocalBrowserInitialzation.driver);
 	  }
 	  
 }
