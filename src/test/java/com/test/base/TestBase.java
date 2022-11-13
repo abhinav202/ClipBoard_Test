@@ -9,40 +9,46 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 
-public class TestBase 
+import com.Clipboard.base.ConfigReader;
+import com.Clipboard.base.LocalBrowserInitialzation;
 
-{
+public class TestBase {
 	
+	ConfigReader reader = new ConfigReader();
 	
 	@BeforeSuite
 	public void beforeSuite() {
-		
+
 	}
-	
+
 	@BeforeTest
-    public void initialzeBrowser(String browserName) {
-		
+	@Parameters("Browser")
+	public void initialzeBrowser(String browserName) {
+		LocalBrowserInitialzation.setup(reader.app_url(), browserName);
 	}
-	
-	@BeforeMethod
+
+	@BeforeMethod(alwaysRun = true)
+	@Parameters("Browser")
 	public void nameBefore(Method method, String browserName) {
-		
+		String testName = method.getDeclaringClass().getName();
+		System.out.println("Test executing right now= " + testName);		
 	}
-	
+
 	@AfterMethod
-	public  void getResult(ITestResult result, String browserName) {
-		
+	public void getResult(ITestResult result, String browserName) {
+
 	}
-	
+
 	@AfterTest
 	public void TearDown() {
-		
+		LocalBrowserInitialzation.quitDriver();
 	}
-	
+
 	@AfterSuite
 	public void closeExtentReport() {
-		
+
 	}
-		
+
 }

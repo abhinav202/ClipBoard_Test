@@ -1,0 +1,7 @@
+                   **Url to be triggered**
+
+AMAZON_URL= https://www.amazon.in/
+
+                           **PATH**
+
+EXTENT_CONFIG_PATH=//test-output//extent-config.xmls
