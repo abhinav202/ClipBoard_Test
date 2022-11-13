@@ -7,7 +7,7 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 import com.Clipboard.base.LocalBrowserInitialzation;
-
+import com.Clipboard.utility.WaitHelper;
 
 
 public class HomePage {
@@ -32,19 +32,22 @@ public class HomePage {
 		 *   */
 		
 	  
-	  public HomePage click_on_hamburgerMenu() {		 	
+	  public HomePage click_on_hamburgerMenu() {
+		  WaitHelper.isClickable(hamburgerMenu, LocalBrowserInitialzation.driver);	
 		  hamburgerMenu.click();
 		  return new HomePage(LocalBrowserInitialzation.driver);
 	  }
 	  
-	  public HomePage click_on_TvElectronicslink() {		  	
+	  public HomePage click_on_TvElectronicslink() {
+		  WaitHelper.isClickable(tvElectronicslink, LocalBrowserInitialzation.driver);	
 		  tvElectronicslink.click();
 		  return new HomePage(LocalBrowserInitialzation.driver);
 	  }
 	  
-	  public HomePage click_on_Televisionslink() {		  	
+	  public SearchResultsPage click_on_Televisionslink() {
+		  WaitHelper.isClickable(televisionslink, LocalBrowserInitialzation.driver);	
 		  televisionslink.click();
-		  return new HomePage(LocalBrowserInitialzation.driver);
+		  return new SearchResultsPage(LocalBrowserInitialzation.driver);
 	  }
 	  
 }
