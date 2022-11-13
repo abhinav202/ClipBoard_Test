@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ClipBoardHealth_AmazonTest">
+
+
+  <test name="Test1" preserve-order="true">
+        <classes>
+            <class
+                name="com.test.pages.Verify_About_this_item_on_ProductPage" />
+            <parameter name="Browser" value="Chrome" />
+        </classes>
+    </test> 
+
+</suite>
