@@ -10,6 +10,7 @@ import com.Clipboard.base.LocalBrowserInitialzation;
 import com.Clipboard.utility.WaitHelper;
 
 
+
 public class HomePage {
   
 	public HomePage(WebDriver driver) {
@@ -33,20 +34,23 @@ public class HomePage {
 		
 	  
 	  public HomePage click_on_hamburgerMenu() {
-		  WaitHelper.isClickable(hamburgerMenu, LocalBrowserInitialzation.driver);	
+		  WaitHelper.isClickable(hamburgerMenu, LocalBrowserInitialzation.driver);
 		  hamburgerMenu.click();
+		  System.out.println("Clicked on hamburger menu");
 		  return new HomePage(LocalBrowserInitialzation.driver);
 	  }
 	  
 	  public HomePage click_on_TvElectronicslink() {
-		  WaitHelper.isClickable(tvElectronicslink, LocalBrowserInitialzation.driver);	
+		  WaitHelper.isClickable(tvElectronicslink, LocalBrowserInitialzation.driver);
 		  tvElectronicslink.click();
+		  System.out.println("Clicked on Tv, Appliances, Electronics");
 		  return new HomePage(LocalBrowserInitialzation.driver);
 	  }
 	  
 	  public SearchResultsPage click_on_Televisionslink() {
-		  WaitHelper.isClickable(televisionslink, LocalBrowserInitialzation.driver);	
+		  WaitHelper.isClickable(televisionslink, LocalBrowserInitialzation.driver);
 		  televisionslink.click();
+		  System.out.println("Clicked on Televisions");
 		  return new SearchResultsPage(LocalBrowserInitialzation.driver);
 	  }
 	  

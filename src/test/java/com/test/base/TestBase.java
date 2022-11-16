@@ -15,12 +15,12 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
+import com.Clipboard.base.ConfigReader;
 import com.Clipboard.base.LocalBrowserInitialzation;
+import com.Clipboard.utility.ExtentReport;
 import com.Clipboard.utility.ScreenShotHelper;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-import com.Clipboard.base.ConfigReader;
-import com.Clipboard.utility.ExtentReport;
 
 public class TestBase
 
@@ -36,10 +36,11 @@ public class TestBase
 						System.getProperty("user.dir") + reader.extentConfigPath());
 	}
 
-	@BeforeTest
-	@Parameters("Browser")
+	@BeforeTest	
+	@Parameters("Browser")	
 	public void initialzeBrowser(String browserName) {
 		LocalBrowserInitialzation.setup(reader.app_url(), browserName);
+		//RemoteBrowserIntialization.setup(reader.app_url(), browserName);
 	}
 
 	@BeforeMethod(alwaysRun = true)

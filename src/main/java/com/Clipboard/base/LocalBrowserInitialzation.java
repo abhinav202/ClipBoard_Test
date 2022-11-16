@@ -13,8 +13,7 @@ public class LocalBrowserInitialzation {
 
 		if (driver == null) {
 			switch (browserName) {
-			case "FireFox":
-				//WebDriverManager.firefoxdriver().setup();
+			case "FireFox":				
 				driver = new FirefoxDriver();
 				driver.get(url);
 				break;
@@ -25,8 +24,7 @@ public class LocalBrowserInitialzation {
 				driver.get(url);
 				break;
 				
-			case "Edge":
-				//WebDriverManager.iedriver().setup();
+			case "Edge":				
 				driver = new EdgeDriver();
 				driver.get(url);
 				break;
@@ -36,7 +34,7 @@ public class LocalBrowserInitialzation {
 						String.format("%s browser is not valid please provide valid browserName", browserName));
 			}
 		}
-		System.out.println("===maximize");
+		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
 		return driver;
 	}

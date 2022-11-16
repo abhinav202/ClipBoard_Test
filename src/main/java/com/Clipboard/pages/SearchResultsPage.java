@@ -36,6 +36,7 @@ public class SearchResultsPage {
 	  public SearchResultsPage click_on_samsungfilter() {
 		  WaitHelper.isClickable(samsungfilter, LocalBrowserInitialzation.driver);	
 		  samsungfilter.click();
+		  System.out.println("Clicked on Filter by Brands - Samsung");
 		  return new SearchResultsPage(LocalBrowserInitialzation.driver);
 	  }
 	  
@@ -48,12 +49,14 @@ public class SearchResultsPage {
 	  public SearchResultsPage click_on_priceHighToLow() {
 		  WaitHelper.isClickable(priceHighToLow, LocalBrowserInitialzation.driver);	
 		  priceHighToLow.click();
+		  System.out.println("Clicked on Sort the TVs by Price - High to Low");
 		  return new SearchResultsPage(LocalBrowserInitialzation.driver);
 	  }
 	  
 	  public ItemPage click_on_secondSamsungTV() {
 		  WaitHelper.isClickable(secondSamsungTV, LocalBrowserInitialzation.driver);	
 		  secondSamsungTV.click();
+		  System.out.println("Clicked on second TV shown among the results");
 		  return new ItemPage(LocalBrowserInitialzation.driver);
 	  }
 	  
